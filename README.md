@@ -1,5 +1,10 @@
 # 👻 Open Data Science Competition Hosted By NVIDIA : Predicting the Scariest Monster
 
+## Link to Colab Notebook:
+[Open this notebook in Google Colab](https://colab.research.google.com/drive/1N9I19hw8kbnNC2j3QmP5nTD5GbgGF5qW?usp=sharing)
+
+
+
 ## Project Overview
 
 This project presents a solution for the **ODSC 2024 NVIDIA Hackathon**, where data scientists are challenged to predict the "Scariest Monster" using a massive dataset filled with 12 million entries, each described by 106 anonymous features. The ultimate goal is to forecast the number of votes each monster received in a global terror poll, utilizing GPU-accelerated data processing and machine learning techniques.

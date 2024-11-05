@@ -1,71 +1,57 @@
-# Nvidia-Data-Science-Competition
-Submission for NVIDIA's Open Data Science Competition: A regression model predicting the scariest monster based on a dataset of 12 million records with 106 anonymous features. Utilizes GPU-accelerated data frame processing and model training via NVIDIA RAPIDS API to forecast global terror poll votes, evaluated using RMSE.
+# 👻 ODSC 2024 NVIDIA Hackathon: Predicting the Scariest Monster
 
-# 🎃 NVIDIA Open Data Science Competition: Predicting the Scariest Monster 🧟‍♀️👻
+## Project Overview
 
-This repository contains my submission for NVIDIA's Open Data Science Competition, where the goal is to identify the scariest monster based on a dataset of 12 million records with 106 anonymous features. Using GPU-accelerated data processing and model training through the NVIDIA RAPIDS API, this project aims to predict global terror poll votes for each monster with high accuracy.
+This project presents a solution for the **ODSC 2024 NVIDIA Hackathon**, where data scientists are challenged to predict the "Scariest Monster" using a massive dataset filled with 12 million entries, each described by 106 anonymous features. The ultimate goal is to forecast the number of votes each monster received in a global terror poll, utilizing GPU-accelerated data processing and machine learning techniques.
 
-## 📊 Project Overview
+## Dataset
 
-### Problem Statement
-The dataset includes information on 12 million unique monsters worldwide, each described by a combination of 106 categorical and numerical features. The challenge is to predict the target variable, **"y"** — the number of votes each monster received in the global terror poll.
+The competition dataset includes:
 
-The **objective** is to create a regression model that accurately forecasts the "y" value, helping us answer: "Who is the scariest monster of them all?" 🏆💀
+- **12 million monster entries**
+- **106 anonymous features** (a mix of categorical and numerical)
+- **Target variable 'y'**: Number of votes each monster received in the global terror poll
+- **Dataset size**: Approximately **8-10GB**
 
-### Key Components
-- **Data**: 12 million records with anonymous features describing various attributes of each monster.
-- **Goal**: Predict the number of votes each monster received.
-- **Evaluation Metric**: **Root Mean Squared Error (RMSE)**, with lower scores indicating better model performance. Rankings are based on a private leaderboard evaluated on a hidden subset of the test data.
+## Approach
 
----
+Our approach to tackling this challenge involves the following steps:
 
-## 🚀 Solution Approach
+1. **Data Loading and Preprocessing**: 
+   - Loading the data using **cuDF** (RAPIDS NVIDIA API) for GPU-accelerated processing.
+   - Performing basic **Exploratory Data Analysis (EDA)** to understand the dataset.
+   - Dropping categorical columns to avoid creating sparse matrices.
+   - Applying **mean imputation** for numerical columns.
+   - Removing outliers and performing **robust normalization** for stability.
 
-1. **Data Preprocessing**
-   - Loaded and preprocessed the dataset using **cuDF** for efficient GPU-accelerated data manipulation.
-   - Split the dataset into training and testing sets using **cuml.model_selection.train_test_split**.
+2. **Memory-Efficient Train-Test Split**:
+   - Creating a custom train-test split method to handle memory constraints effectively.
+   - Using a random shuffled column for efficient data shuffling and splitting.
 
-2. **Feature Engineering**
-   - Applied necessary transformations and feature engineering techniques to enhance the model's predictive capability.
+3. **Model Training**:
+   - Implementing a **Random Forest Regressor** using the RAPIDS **cuML** library for GPU-accelerated processing.
 
-3. **Modeling**
-   - Built a regression model using **cuml.ensemble.RandomForestRegressor**, leveraging the GPU for accelerated training.
-   - Evaluated model performance using the **mean_squared_error** metric.
+4. **Post-processing**:
+   - Applying **inverse robust scaling** to calculate the final RMSE value.
 
-4. **Evaluation**
-   - Calculated RMSE to assess the model's performance on the test set.
+5. **Prediction and Submission**:
+   - Generating predictions on the test set.
+   - Preparing the submission file in accordance with the competition guidelines.
 
----
+## Technologies Used
 
-## 🛠️ Tech Stack
+- **Python 3.x**
+- **RAPIDS cuDF** for GPU-accelerated data processing
+- **RAPIDS cuML** for GPU-accelerated machine learning
+- **Scikit-learn** for preprocessing and metrics
+- **Google Colab Notebook** for interactive development
 
-- **NVIDIA RAPIDS**: GPU-accelerated data processing with cuDF for data manipulation, enabling faster computations compared to traditional CPU-based pandas.
-- **cuML**: Used for machine learning tasks, including regression modeling and evaluation metrics.
-- **NumPy**: Utilized for numerical operations.
-- **CuPy**: Used for GPU-accelerated array operations.
+## Results
 
----
+The model's performance is evaluated based on **Root Mean Squared Error (RMSE)**, with lower scores indicating better performance.
 
-## 🗂️ Repository Structure
+## Getting Started
 
-- **Notebook**: The main Jupyter Notebook containing all steps, from data loading to model evaluation.
-- **Scripts**: Modularized scripts for data handling, feature engineering, and model training.
-- **Results**: Output files or summary metrics generated from model evaluation.
-
----
-
-## 📈 Results & Next Steps
-- **Final RMSE Score**: _<639.85>_
-- **Future Improvements**:
-  - Explore different feature engineering techniques.
-  - Fine-tune hyperparameters further.
-  - Experiment with ensemble models for potential performance gains.
-
----
-
-## ⚡ Getting Started
-
-1. Clone the repository:
+1. **Clone this repository**:
    ```bash
-   git clone https://github.com/your-username/nvidia-monster-prediction.git
-
+   https://github.com/Parag000/Nvidia-Data-Science-Competition.git

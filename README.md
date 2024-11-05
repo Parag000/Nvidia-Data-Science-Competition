@@ -1,9 +1,10 @@
-# 👻 Open Data Science Competition Hosted By NVIDIA : Predicting the Scariest Monster
+# 👻 Predicting the Scariest Monster - Nvidia Hackathon
 
 ## Link to Colab Notebook:
 [Open this notebook in Google Colab](https://colab.research.google.com/drive/1N9I19hw8kbnNC2j3QmP5nTD5GbgGF5qW?usp=sharing)
 
-
+## Our Submission Scores
+![Submission Score](https://github.com/Parag000/Nvidia-Data-Science-Competition/blob/main/submisssion-score.png?raw=true)
 
 ## Project Overview
 
@@ -56,8 +57,14 @@ Our approach to tackling this challenge involves the following steps:
 
 The model's performance is evaluated based on **Root Mean Squared Error (RMSE)**, with lower scores indicating better performance.
 
+
 ## Getting Started
 
 1. **Clone this repository**:
    ```bash
    https://github.com/Parag000/Nvidia-Data-Science-Competition.git
+
+
+## Leaderboard
+![Leaderboard](https://github.com/Parag000/Nvidia-Data-Science-Competition/blob/main/leaderboard.png)
+

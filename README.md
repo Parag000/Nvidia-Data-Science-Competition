@@ -1,4 +1,4 @@
-# 👻 ODSC 2024 NVIDIA Hackathon: Predicting the Scariest Monster
+# 👻 OPen Data Science Competition Hosted By NVIDIA : Predicting the Scariest Monster
 
 ## Project Overview
 
@@ -40,6 +40,7 @@ Our approach to tackling this challenge involves the following steps:
 
 ## Technologies Used
 
+- **Used A100 hardware acceleration**
 - **Python 3.x**
 - **RAPIDS cuDF** for GPU-accelerated data processing
 - **RAPIDS cuML** for GPU-accelerated machine learning

@@ -1,4 +1,4 @@
-# 👻 OPen Data Science Competition Hosted By NVIDIA : Predicting the Scariest Monster
+# 👻 Open Data Science Competition Hosted By NVIDIA : Predicting the Scariest Monster
 
 ## Project Overview
 
